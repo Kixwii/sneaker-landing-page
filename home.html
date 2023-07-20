@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>House of Hermes</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Barcode+39+Text&family=Share+Tech+Mono&family=UnifrakturMaguntia&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="page-transition"></div>
+    <header>
+        <div class="container">
+            <h1>House of Hermes</h1>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="countdown.html">Shop</a></li>
+                    <li><a href="#">Sell</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <section id="home" class="hero">
+        <div class="container">
+            <h2>Discover and Buy Authentic Sneakers</h2>
+            <p>Explore our vast collection of rare and exclusive sneakers from top brands.</p>
+            <a href="countdown.html" class="btn" onclick="navigateToCountdown()">Shop Now</a>
+        </div>
+    </section>
+
+    <section class="countdown" class="countdown">
+        <div class="container">
+            <h2>Countdown t0 L@unch</h2>
+        </div id="countdown-timer">
+    </section>
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 House of Hermes. All rights reserved.</p>
+        </div>
+    </footer>
+
+
+    <script>
+        function navigateToCountdown(){
+            const pageTransition = document.querySelector('.page-transition');
+            pageTransition.classList.add('active');
+            setTimeout(() => {
+                window.location.href = 'countdown.hmtl';
+            }, 300);
+        }
+       
+
+            //setting the launchdate
+            const launchDate = new Date('2023-12-31T00:00:00').getTime();
+
+
+            //Update the count every second
+            const countdownTimer = setInterval(() => {
+                const now = new Date().getTime();
+                const timeLeft = launchDate - now ;
+
+                const days = Math.floor(timeleft / (100 * 60 * 60 * 24));
+                const hours = Math.floor(timeleft / (100 * 60 * 60 * 24)) / (1000 * 60 * 60);
+                const minutes = Math.floor(timeleft / (100 * 60 * 60 * 24)) / (1000 * 60);
+                const seconds = Math.floor(timeleft / (100 * 60 * 60 * 24)) / 1000;
+
+                document.getElementById('countdown-timer').innerHTML = `
+                  <div>${days} Days </div>
+                  <div>${hours} Hours </div>
+                  <div>${minutes} Minutes </div>
+                  <div>${seconds} Seconds </div>
+                `;
+
+                //if the countdown is over
+                if(timeLeft < 0) {
+                    clearInterval(countdownTimer);
+                    document.getElementById('countdown-timer').innerHTML = "L4UNCH T1M3 !";
+                }
+
+            }, 1000);
+    </script>
+</body>
+</html>

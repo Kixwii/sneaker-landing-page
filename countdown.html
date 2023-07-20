@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Countdown | Sneaker Marketplace</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Barcode+39+Text&family=Share+Tech+Mono&family=UnifrakturMaguntia&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="countdown.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>House of Hermes</h1>
+            <nav>
+                <ul>
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="countdown.html">Shop</a></li>
+                    <li><a href="#">Sell</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <section id="countdown" class="countdown">
+        <div class="container">
+            <h2>Countdown t0 L@unch</h2>
+            <div id="countdown-timer">
+                <div >
+                    <span id="days">0 : </span>
+                </div>
+                <div >
+                    <span id="hours">0 : </span>
+                </div>
+                <div >
+                    <span id="minutes">0 : </span>
+                </div>
+                <div >
+                    <span id="seconds">0 : </span>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 House of Hermes. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Set the launch date (change to your desired launch date)
+        const launchDate = new Date('2023-12-31T00:00:00').getTime();
+
+        // Update the countdown every second
+        const countdownTimer = setInterval(() => {
+            const now = new Date().getTime();
+            const timeLeft = launchDate - now;
+
+            const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+
+            document.getElementById('days').textContent = `${days} :`;
+            document.getElementById('hours').textContent = ` ${hours} :`;
+            document.getElementById('minutes').textContent = ` ${minutes} :`;
+            document.getElementById('seconds').textContent = ` ${seconds} `;
+
+            // If the countdown is over, display a message
+            if (timeLeft < 0) {
+                clearInterval(countdownTimer);
+                document.getElementById('countdown-timer').innerHTML = "Launch time has arrived!";
+            }
+        }, 1000);
+    </script>
+</body>
+</html>

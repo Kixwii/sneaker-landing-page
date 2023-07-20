@@ -1,0 +1,164 @@
+body {
+    font-family: 'Share Tech Mono', monospace;
+    margin: 0;
+    min-height: 100vh;
+    bottom: 0;
+    background-color: rgb(153, 153, 152);
+   overflow-y: hidden;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.container h1{
+ font-family: 'Libre Barcode 39 Text', cursive;
+ font-size: 35px;
+}
+
+
+
+header {
+    background-color: #24292e;
+    color: #fff;
+    padding: 20px 0;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 30px;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    margin-top: 10px;
+    padding: 0;
+}
+
+nav li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav li :hover{
+    color: #24292e;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.hero {
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    padding: 200px 0;
+    color: #fff;
+}
+
+.hero h2 {
+    color: #38465552;
+    font-family: 'UnifrakturMaguntia', cursive;
+    font-size: 70px;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    color: black;
+    font-size: 24px;
+    max-width: 600px;
+    margin: 0 auto 30px;
+}
+
+.btn {
+    display: inline-block;
+    background-color: #eb4d4b;
+    color: #fff;
+    padding: 16px 32px;
+    text-decoration: none;
+    border-radius: 4px;
+    font-size: 20px;
+    transition: background-color 0.2s ease;
+}
+
+.btn:hover {
+    background-color: #ff6b6b;
+}
+
+.countdown{
+    background-image: url('assets/vanta.webp');
+    padding: 100px 0;
+    text-align: center;
+}
+
+.countdown h2{
+    font-size:  36px;
+    margin-top: 20px;
+    text-align: center;
+}
+
+#coundown-timer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#countdown-timer div{
+    font-family: 'Share Tech Mono', monospace;
+    color: rgb(250, 3, 209);
+    font-size: 36px;
+    padding: 20px;
+    border-radius: 4px;
+    margin: 0 10px;
+    background-color: transparent;
+    text-align: center;
+}
+
+#countdown-timer div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#countdown-timer div:not(:last-child) {
+    margin-right: 15px;
+}
+
+/* Add additional styling for the sneaker collection section here */
+
+footer {
+    background-color: #24292e;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    flex-shrink: 0;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+footer p {
+    margin: 0;
+    font-size: 16px;
+}
+
+.page-transition{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #24292e;
+    transform: translateY(100%);
+    transition: transform 0.3s ease-out;
+}
+
+.page-transition.active{
+    transform: translateY(0);
+}
